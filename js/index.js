@@ -14,7 +14,6 @@ const operations = {
       }
       return a / b;
     } catch (error) {
-      // Display the error message in the .error element
       document.querySelector(".error").textContent = error.message;
     }
   },

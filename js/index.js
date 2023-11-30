@@ -8,10 +8,15 @@ const operations = {
   subtract: (a, b) => a - b,
   multiply: (a, b) => a * b,
   divide: (a, b) => {
-    if (b === 0) {
-      throw new Error("Cannot divide by zero!");
+    try {
+      if (b === 0) {
+        throw new Error("Cannot divide by zero!");
+      }
+      return a / b;
+    } catch (error) {
+      // Display the error message in the .error element
+      document.querySelector(".error").textContent = error.message;
     }
-    return a / b;
   },
 };
 
